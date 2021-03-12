@@ -30,11 +30,16 @@ public class HeapSort {
             smallest = right;
         if(smallest != i) {
             swap(arr,i, smallest);
+            for(int k=0; k<n; k++) {
+                System.out.print(arr[k] + " ");
+            }
+            System.out.println();
             minheapify(arr, smallest, n);
         }
     }
 
     void swap(int[] arr,int i,int j){
+        System.out.println(arr[i] + " and " + arr[j] + " got swapped");
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
@@ -46,6 +51,10 @@ public class HeapSort {
         }
         for(int i=n-1; i>=0; i--){
             swap(arr,0, i);
+            for(int k=0; k<n; k++) {
+                System.out.print(arr[k] + " ");
+            }
+            System.out.println();
             minheapify(arr,0,i);
         }
     }
