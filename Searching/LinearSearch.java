@@ -10,7 +10,7 @@ public class LinearSearch {
         }
         int numbr = scan.nextInt();
         int res = search(arr,n,numbr);
-        if(res == 0){
+        if(res == -1){
             System.out.println("The given number is not present");
         }
         else {
@@ -24,7 +24,7 @@ public class LinearSearch {
                 return i;
             }
         }
-        return 0;
+        return -1;
     }
 
 }
