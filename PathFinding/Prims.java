@@ -18,6 +18,8 @@ public class Prims {
         int parent[] = new int[v];
         int key[] = new int[v];
         boolean visited[] = new boolean[v];
+        int[] src = new int[v];
+        int[] dest = new int[v];
 
 
         for(int i=0; i<v; i++) {
@@ -27,11 +29,10 @@ public class Prims {
         }
         key[s] = 0;
 
-        for(int i=0; i<v-1; i++) {
+        for(int i=0; i<v; i++) {
 
             int in = minKey(key,visited,v);
             visited[in] = true;
-
 
 
             for(int j=0; j<v; j++) {
@@ -40,9 +41,15 @@ public class Prims {
                     key[j] = arr[in][j];
                 }
             }
-
+            dest[i] = in;
+            src[i] = parent[in];
+            
         }
 
+        /*for(int i=1; i<v; i++){
+            System.out.println(src[i]+","+dest[i]+" W-"+arr[src[i]][dest[i]]);
+        }
+        System.out.println();*/
         for(int i=1; i<v; i++){
             System.out.println(parent[i]+","+i+" W-"+arr[i][parent[i]]);
         }
