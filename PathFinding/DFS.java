@@ -51,11 +51,11 @@ public class DFS {
         LinkedList<Integer> adjList[] = new LinkedList[20];
         int[][] edges = {{0,1},{0,2},{1,3},{1,4},{3,5},{4,5},{2,6},{2,7},{2,8},{2,9}};
 
-        for(int i = 0; i<6; i++) {
+        for(int i = 0; i<10; i++) {
             adjList[i] = new LinkedList<Integer>();
         }
 
-        for(int i = 0; i<6; i++) {
+        for(int i = 0; i<10; i++) {
             int x = edges[i][0];
             int y = edges[i][1];
             addEdge(adjList,x,y);
