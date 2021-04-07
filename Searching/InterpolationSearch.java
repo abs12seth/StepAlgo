@@ -24,7 +24,12 @@ public class InterpolationSearch {
     int search(int[] arr, int low, int high, int num){
         int pos = 0;
         if(low <= high && num >= arr[low] && num <= arr[high]){
-            pos = low + (((high - low)/(arr[high] - arr[low])) * (num - arr[low]));
+            if(low == high){
+            	pos = low;
+            }
+            else{
+                pos = low + (((high - low)/(arr[high] - arr[low])) * (num - arr[low]));
+            }
             if(arr[pos] == num){
                 return pos;
             }
